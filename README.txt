@@ -26,7 +26,7 @@ Practically, HADA can be used by invoking, from the command line, the script had
 optimization model according to the user input, hence it solves this model to deliver an optimal solution. 
 Precisely, HADA can be executed as follows: 
 
-    python3 hada.py \
+    python3 hada_omlt.py \
             --help                <show help message>
             --data_folder         <folder with data for bounds/robustness coefficients (def: datasets)>\
             --models_folder       <folder with predictive models (def: DTs)> \
@@ -43,3 +43,6 @@ Precisely, HADA can be executed as follows:
             --export_model        <when given, the final HADA model is exported to a .lp file> \
             --export_results      <when given, the obtained solution is exported to a .csv file> \
             --export_log          <when given, the log is exported to a .log file> 
+            --train               <when given, the GBTs are retrained with the given max_depth, estimators>
+            --max_depth           <max_depth hyperparameter for GBTs to use>
+            --estimators           <number of estimators hyperparameter for GBTs to use>
