@@ -101,6 +101,10 @@ def train_targets_GBT(datasets_dir, estimators=1, max_depth=10, hyperparameter_s
 
 if __name__ == "__main__":
     ml_path = os.path.dirname(os.path.join(os.getcwd(), __file__, "ML"))
+    
+    if not os.path.exists(os.path.join(os.path.dirname(__file__), "GBTs")):
+        os.makedirs(os.path.join(os.path.dirname(__file__), "GBTs"))
+
     for algorithm in ['saxpy', 'convolution', 'correlation', 'fwt']:
         if not os.path.exists(os.path.join("datasets", f'{algorithm}_quality.csv')):
             create_dataset_quality(ml_path, algorithm)
